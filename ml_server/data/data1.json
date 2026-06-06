@@ -1,0 +1,31 @@
+[
+  {"name":"Chiranjeevi","gender":"Male","count":"5","phone":"6556677889","situation":"Whole family stuck on roof.","needs":"Rescue","server_time":"08:10:00","location":"Ranip, Ahmedabad"},
+  {"name":"Neha Patel","gender":"Female","count":"2","phone":"9123456711","situation":"Child has high fever.","needs":"Medical","server_time":"08:12:00","location":"Bopal, Ahmedabad"},
+  {"name":"Ramesh Solanki","gender":"Male","count":"4","phone":"9012345678","situation":"No food left since yesterday.","needs":"Food","server_time":"08:14:00","location":"Naroda, Ahmedabad"},
+  {"name":"Aarti Mehta","gender":"Female","count":"1","phone":"9988776655","situation":"Safe at home.","needs":"","server_time":"08:16:00","location":"Navrangpura, Ahmedabad"},
+  {"name":"Harshil Shah","gender":"Male","count":"6","phone":"9876543219","situation":"Basement flooded, sparks from wiring.","needs":"Rescue","server_time":"08:18:00","location":"Maninagar, Ahmedabad"},
+
+  {"name":"Kavita Joshi","gender":"Female","count":"3","phone":"8899001122","situation":"Insulin running out for diabetic patient.","needs":"Medical","server_time":"08:20:00","location":"Sector 21, Gandhinagar"},
+  {"name":"Aman Verma","gender":"Male","count":"8","phone":"7766554433","situation":"Shelter overcrowded, water shortage.","needs":"Food","server_time":"08:22:00","location":"Kudasan, Gandhinagar"},
+  {"name":"Sunita Rao","gender":"Female","count":"2","phone":"9001122334","situation":"Trapped in elevator.","needs":"Rescue","server_time":"08:24:00","location":"Infocity, Gandhinagar"},
+  {"name":"Raj Malhotra","gender":"Male","count":"1","phone":"9887766554","situation":"Safe but scared.","needs":"","server_time":"08:26:00","location":"Sector 7, Gandhinagar"},
+  {"name":"Mehul Patel","gender":"Male","count":"5","phone":"9667788990","situation":"Food finished, kids hungry.","needs":"Food","server_time":"08:28:00","location":"Sector 16, Gandhinagar"},
+
+  {"name":"Imran Khan","gender":"Male","count":"4","phone":"8112233445","situation":"Water entered house, stuck inside.","needs":"Rescue","server_time":"08:30:00","location":"Adajan, Surat"},
+  {"name":"Pooja Desai","gender":"Female","count":"1","phone":"9223344556","situation":"Severe asthma attack.","needs":"Medical","server_time":"08:32:00","location":"Varachha, Surat"},
+  {"name":"Rahul Mishra","gender":"Male","count":"3","phone":"9334455667","situation":"No clean drinking water.","needs":"Food","server_time":"08:34:00","location":"Katargam, Surat"},
+  {"name":"Sneha Joshi","gender":"Female","count":"2","phone":"9445566778","situation":"Safe for now.","needs":"","server_time":"08:36:00","location":"Adajan, Surat"},
+  {"name":"Vikas Yadav","gender":"Male","count":"6","phone":"9556677889","situation":"Family stranded on terrace.","needs":"Rescue","server_time":"08:38:00","location":"Udhna, Surat"},
+
+  {"name":"Nisha Parmar","gender":"Female","count":"3","phone":"9667788001","situation":"Father injured in wall collapse.","needs":"Medical Rescue","server_time":"08:40:00","location":"Manjalpur, Vadodara"},
+  {"name":"Suresh Patel","gender":"Male","count":"7","phone":"9778899002","situation":"Slum flooded, no food.","needs":"Rescue Food","server_time":"08:42:00","location":"Gotri, Vadodara"},
+  {"name":"Alok Shah","gender":"Male","count":"2","phone":"9889900112","situation":"High fever and dizziness.","needs":"Medical","server_time":"08:44:00","location":"Alkapuri, Vadodara"},
+  {"name":"Rina Kapoor","gender":"Female","count":"1","phone":"9990011223","situation":"Safe indoors.","needs":"","server_time":"08:46:00","location":"Akota, Vadodara"},
+  {"name":"Manoj Singh","gender":"Male","count":"5","phone":"9001122334","situation":"Water level rising near house.","needs":"Rescue","server_time":"08:48:00","location":"Fatehgunj, Vadodara"},
+
+  {"name":"Amit Sharma","gender":"Male","count":"4","phone":"8111222333","situation":"No food supply left.","needs":"Food","server_time":"08:50:00","location":"Ranip, Ahmedabad"},
+  {"name":"Kiran Shah","gender":"Female","count":"2","phone":"8222333444","situation":"Chest pain reported.","needs":"Medical","server_time":"08:52:00","location":"Paldi, Ahmedabad"},
+  {"name":"Deepak Rana","gender":"Male","count":"6","phone":"8333444555","situation":"Ground floor flooded.","needs":"Rescue","server_time":"08:54:00","location":"Vastral, Ahmedabad"},
+  {"name":"Pallavi Jain","gender":"Female","count":"3","phone":"8444555666","situation":"No water for cooking.","needs":"Food","server_time":"08:56:00","location":"Thaltej, Ahmedabad"},
+  {"name":"Rohit Meena","gender":"Male","count":"1","phone":"8555666777","situation":"All safe.","needs":"","server_time":"08:58:00","location":"Bodakdev, Ahmedabad"}
+]

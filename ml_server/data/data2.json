@@ -1,0 +1,25 @@
+[
+  {"date":"2026-02-06","city":"Ahmedabad","police_units":1,"medical_units":2,"food_kits":0},
+  {"date":"2026-02-07","city":"Ahmedabad","police_units":2,"medical_units":2,"food_kits":2},
+  {"date":"2026-02-08","city":"Ahmedabad","police_units":1,"medical_units":2,"food_kits":1},
+  {"date":"2026-02-09","city":"Ahmedabad","police_units":2,"medical_units":1,"food_kits":0},
+  {"date":"2026-02-10","city":"Ahmedabad","police_units":1,"medical_units":2,"food_kits":3},
+
+  {"date":"2026-02-06","city":"Gandhinagar","police_units":1,"medical_units":1,"food_kits":0},
+  {"date":"2026-02-07","city":"Gandhinagar","police_units":2,"medical_units":3,"food_kits":1},
+  {"date":"2026-02-08","city":"Gandhinagar","police_units":1,"medical_units":2,"food_kits":4},
+  {"date":"2026-02-09","city":"Gandhinagar","police_units":2,"medical_units":1,"food_kits":2},
+  {"date":"2026-02-10","city":"Gandhinagar","police_units":3,"medical_units":1,"food_kits":1},
+
+  {"date":"2026-02-06","city":"Surat","police_units":2,"medical_units":2,"food_kits":1},
+  {"date":"2026-02-07","city":"Surat","police_units":2,"medical_units":2,"food_kits":1},
+  {"date":"2026-02-08","city":"Surat","police_units":2,"medical_units":1,"food_kits":3},
+  {"date":"2026-02-09","city":"Surat","police_units":3,"medical_units":2,"food_kits":5},
+  {"date":"2026-02-10","city":"Surat","police_units":2,"medical_units":2,"food_kits":2},
+
+  {"date":"2026-02-06","city":"Vadodara","police_units":2,"medical_units":1,"food_kits":1},
+  {"date":"2026-02-07","city":"Vadodara","police_units":2,"medical_units":1,"food_kits":2},
+  {"date":"2026-02-08","city":"Vadodara","police_units":1,"medical_units":1,"food_kits":5},
+  {"date":"2026-02-09","city":"Vadodara","police_units":4,"medical_units":2,"food_kits":3},
+  {"date":"2026-02-10","city":"Vadodara","police_units":1,"medical_units":1,"food_kits":2}
+]
