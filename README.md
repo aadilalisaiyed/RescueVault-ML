@@ -8,7 +8,6 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
 [![Node.js](https://img.shields.io/badge/Node.js-Bridge-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
 <br/>
 
@@ -118,9 +117,27 @@ City-wise aggregated resource demand:
 
 ---
 
-## 🚀 Running Locally
+## 🚀 Deployment (N_MAPS Integration)
 
-### 1. ML Server (FastAPI)
+> **This ML server is not a standalone app.** It is designed to run on the **Command Center laptop** inside the N_MAPS ecosystem. SOS data is NOT read from a local file — it is pushed live by the ESP32 Gateway Node over the tactical WiFi network.
+
+### Real Data Flow
+
+```
+Victim's Phone
+     ↓  (connects to SENTINEL_RESCUE_SOS hotspot)
+Edge Node (Arduino Mega + ESP8266)
+     ↓  (encrypted SOS stored in victims.json)
+Gateway Node (ESP32) — pulls via WiFi
+     ↓  (sends JSON over USB Serial)
+esp_bridge.py — Python serial bridge
+     ↓  (POST to /predict)
+This FastAPI ML Server  ←── You are here
+     ↓  (city-wise resource summary)
+Role-Based Command Dashboards
+```
+
+### Start the ML Server
 
 ```bash
 cd ml_server
@@ -128,34 +145,33 @@ pip install -r requirements.txt
 uvicorn main:app --reload --port 8000
 ```
 
-API will be live at `http://localhost:8000`  
-Interactive docs at `http://localhost:8000/docs`
+Once running, the N_MAPS ESP bridge (`esp_bridge.py` in [N_MAPS](https://github.com/aadilalisaiyed/N_MAPS)) sends live victim reports to `http://127.0.0.1:8000/predict` automatically.
 
-### 2. Node.js Bridge (Express)
+### Test with Sample Data (Offline / Demo)
 
-```bash
-cd backend
-npm install
-node server.js
-```
-
-Bridge runs at `http://localhost:3000`
-
-### 3. Trigger a Prediction
+The `backend/` folder contains a Node.js test bridge that simulates ESP data using the included `data1.json` dataset — useful for **demoing the ML output** without hardware:
 
 ```bash
+# Terminal 1 — start ML server
+cd ml_server && uvicorn main:app --reload --port 8000
+
+# Terminal 2 — run test bridge
+cd backend && npm install && node server.js
+
+# Terminal 3 — trigger prediction
 curl -X POST http://localhost:3000/api/predict
 ```
 
-The bridge reads `ml_server/data/data1.json`, forwards it to the Python ML server, and returns the city-wise resource summary.
+> ⚠️ The `backend/` test bridge is for **demo/development only**. In a real N_MAPS deployment, the ESP bridge handles data delivery directly.
 
 ---
 
 ## 📡 API Reference
 
-### `POST /predict` (ML Server — port 8000)
+### `POST /predict`
 
-**Request body:** Array of SOS report objects
+Accepts live SOS report array from the ESP bridge (or test bridge):
+
 ```json
 [
   {
@@ -167,7 +183,8 @@ The bridge reads `ml_server/data/data1.json`, forwards it to the Python ML serve
 ]
 ```
 
-**Response:**
+**Response** — city-wise aggregated resource demand:
+
 ```json
 [
   {
@@ -176,15 +193,16 @@ The bridge reads `ml_server/data/data1.json`, forwards it to the Python ML serve
     "Health_Need": 2,
     "Food_Need": 2,
     "Total_People": 18
+  },
+  {
+    "city": "Gandhinagar",
+    "Police_Need": 2,
+    "Health_Need": 1,
+    "Food_Need": 3,
+    "Total_People": 21
   }
 ]
 ```
-
----
-
-### `POST /api/predict` (Node Bridge — port 3000)
-
-No body required. Reads dataset automatically and returns the same ML output.
 
 ---
 
@@ -211,16 +229,6 @@ This ML module is the intelligence layer of **RescueVault**, a larger disaster r
 ![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
 
 ---
-
-## 👤 Author
-
-**Aadilali Saiyed**  
-Engineering Student · Rashtriya Raksha University, Gandhinagar  
-Secretary, IEEE Student Branch · 3rd @ HackTheSpring'26 HackX
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aadil-saiyed-31a471330/)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/aadilalisaiyed)
-[![Email](https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:aadil.saiyed0327@gmail.com)
 
 <div align="center">
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=100&section=footer" width="100%"/>
